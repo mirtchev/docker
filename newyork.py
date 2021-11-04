@@ -32,5 +32,7 @@ st.bar_chart(hist_values)
 hour_to_filter = st.slider('hour', 0, 23, 17)
 filtered_data = data[data[DATE_COLUMN].dt.hour == hour_to_filter]
 
+filtered_data['base'] = -123
+
 st.subheader('Map of all pick--- !!! ---ups at %s:00' % hour_to_filter)
 st.map(filtered_data)
